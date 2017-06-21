@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void makeNewsSearchQuery() {
         String newsQuery = mSearchBoxEditText.getText().toString();
-        URL newsSearchUrl = NetworkUtils.buildUrl(newsQuery);
+        URL newsSearchUrl = NetworkUtils.buildUrl();
         mUrlDisplayTextView.setText(newsSearchUrl.toString());
 
         new NewsQueryTask().execute(newsSearchUrl);

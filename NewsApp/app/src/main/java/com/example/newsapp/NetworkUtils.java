@@ -16,16 +16,22 @@ import java.util.Scanner;
 
 public class NetworkUtils {
     public static final String TAG = "NetworkingURL";
-//    public static final String BASE_URL = "https://newsapi.org/v1/articles?source=techcrunch&apiKey=f3ab37873c744bdcbf5b696fff7fa489";
-    public static final String BASE_URL = "https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=f3ab37873c744bdcbf5b696fff7fa489";
-    public static final String PARAM_QUERY = "q";
-    public static final String PARAM_SORT = "sort";
+
+    public static final String BASE_URL = "https://newsapi.org/v1/articles";
+    public static final String PARAM_KEY = "apikey";
+    public static final String PARAM_SOURCE="source";
+    public static final String source = "the-next-web";
+    public static final String PARAM_SORT = "sortBy";
     public static final String sortBy = "latest";
 
-    public static URL buildUrl(String searchQuery) {
+    // TODO Insert API key
+    public static final String API_key = "";
+
+    public static URL buildUrl() {
         Uri builtUri = Uri.parse(BASE_URL).buildUpon()
-                .appendQueryParameter(PARAM_QUERY, searchQuery)
+                .appendQueryParameter(PARAM_SOURCE,source)
                 .appendQueryParameter(PARAM_SORT, sortBy)
+                .appendQueryParameter(PARAM_KEY, API_key)
                 .build();
 
         URL url = null;
