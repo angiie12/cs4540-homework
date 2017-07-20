@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ToDoList</string>
+
+    <!--string for the navigation-->
+    <string name="select_category">Select Category</string>
+
+    <!--give the user 5 categories to choose from (All being the default)-->
+    <string-array name="todo_array">
+        <item>All</item>
+        <item>Events</item>
+        <item>Home</item>
+        <item>School</item>
+        <item>Work</item>
+    </string-array>
+
+</resources>

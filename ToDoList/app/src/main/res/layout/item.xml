@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+    <!--Make the checkbox appear next to the description by adding a new linear layout for them-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--Add a checkbox to mark the to-do as completed-->
+        <CheckBox
+            android:id="@+id/check_done"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:onClick="onCheckBoxClicked"/>
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="To do description"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/dueDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="35dp"
+        android:textSize="14dp"
+        android:text="06-04-2017"/>
+
+</LinearLayout>

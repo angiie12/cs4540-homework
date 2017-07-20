@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:weightSum="1"
+    tools:context="com.sargent.mark.todolist.MainActivity"
+    android:baselineAligned="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- create a text view for navigation to select certain category-->
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="202dp"
+            android:layout_height="wrap_content"
+            android:text="@string/select_category"
+            android:textSize="20dp" />
+
+        <!--create a spinner with the categories available to navigate from-->
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight=".90" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addToDo"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight=".10"
+        android:src="@drawable/ic_add_black_48dp"
+        android:text="Add Item" />
+
+</LinearLayout>
