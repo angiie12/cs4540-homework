@@ -10,6 +10,7 @@
     android:baselineAligned="false"
     android:orientation="vertical">
 
+    <!--Add another linear layout to have the text view and the spinner in the same row-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

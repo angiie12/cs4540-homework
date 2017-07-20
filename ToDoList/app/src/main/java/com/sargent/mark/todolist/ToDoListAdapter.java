@@ -78,7 +78,7 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.ItemHo
             due = (TextView) view.findViewById(R.id.dueDate);
             checkBox = (CheckBox) view.findViewById(R.id.check_done);
 
-            // call the method setOnClickListener
+            // need to update the status of the to-do in the database
             checkBox.setOnClickListener(this);
             view.setOnClickListener(this);
         }
@@ -88,7 +88,7 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.ItemHo
             id = cursor.getLong(cursor.getColumnIndex(Contract.TABLE_TODO._ID));
             Log.d(TAG, "deleting id: " + id);
 
-            // check if the value is greater than 0
+            // make sure that the item checked is checked in the database
             checkBox.setChecked(cursor.getInt(cursor.getColumnIndex(Contract.TABLE_TODO.COLUMN_NAME_DONE)) > 0);
             duedate = cursor.getString(cursor.getColumnIndex(Contract.TABLE_TODO.COLUMN_NAME_DUE_DATE));
             description = cursor.getString(cursor.getColumnIndex(Contract.TABLE_TODO.COLUMN_NAME_DESCRIPTION));
@@ -96,7 +96,7 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.ItemHo
             due.setText(duedate);
             holder.itemView.setTag(id);
         }
-        // item marked as complete
+        // get the to-do marked as complete to update the status of the checkbox in the database
         @Override
         public void onClick(View v) {
             if (v instanceof CheckBox) {
