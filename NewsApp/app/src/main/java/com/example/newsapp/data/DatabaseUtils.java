@@ -32,7 +32,7 @@ public class DatabaseUtils{
                 cv.put(COLUMN_NAME_TITLE, a.getTitle());
                 cv.put(COLUMN_NAME_DESCRIPTION, a.getDescription());
                 cv.put(COLUMN_NAME_PUBLISHED_AT, a.getPublishedAt());
-                cv.put(COLUMN_NAME_URL, a.getUrlToImage());
+                cv.put(COLUMN_NAME_URL_TO_IMAGE, a.getUrlToImage());
                 cv.put(COLUMN_NAME_URL, a.getUrl());
                 db.insert(TABLE_NAME, null, cv);
             }

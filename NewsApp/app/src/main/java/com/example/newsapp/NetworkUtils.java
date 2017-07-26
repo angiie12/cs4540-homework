@@ -29,7 +29,7 @@ public class NetworkUtils {
     public static final String source = "the-next-web";
     public static final String PARAM_SORT = "sortBy";
     public static final String sortBy = "latest";
-    public static final String PARAM_KEY = "apikey";
+    public static final String PARAM_KEY = "apiKey";
 
     // TODO Please insert your API key here
     public static final String API_key = "";
@@ -76,6 +76,7 @@ public class NetworkUtils {
         ArrayList<NewsItem> result = new ArrayList<>();
         JSONObject main = new JSONObject(json);
         JSONArray articles = main.getJSONArray("articles");
+        String imgUrl = null;
 
         for (int i = 0; i < articles.length(); i++) {
             JSONObject item = articles.getJSONObject(i);
@@ -86,7 +87,15 @@ public class NetworkUtils {
             String urlToImage = item.getString("urlToImage");
             String publishedAt = item.getString("publishedAt");
 
-            NewsItem newsItem = new NewsItem(author, title, description, url, urlToImage, publishedAt);
+            JSONArray mediaObjects = item.optJSONArray("media");
+            if (mediaObjects != null) {
+                JSONObject img = mediaObjects.getJSONObject(0);
+                JSONArray metaData = img.getJSONArray("media-metadata");
+                JSONObject thumbNail = metaData.getJSONObject(0);
+                imgUrl = thumbNail.getString("url");
+            }
+
+            NewsItem newsItem = new NewsItem(author, title, description, url, imgUrl, publishedAt);
             result.add(newsItem);
         }
         return result;

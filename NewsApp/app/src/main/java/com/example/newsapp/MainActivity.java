@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemNumber = item.getItemId();
 
-        if (itemNumber == R.id.search) {
+        if (itemNumber == R.id.search_box) {
             load();
         }
 

@@ -41,9 +41,9 @@
 
         <ImageView
             android:id="@+id/img"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_gravity="center"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="top"
             android:src="@color/colorAccent" />
     </FrameLayout>
 

@@ -17,6 +17,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
+        <EditText
+        android:id="@+id/search_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+        <!--android:hint="Enter a query, then press Search"-->
+        <!--android:textSize="18sp" />-->
+
     </LinearLayout>
 
 
@@ -28,12 +35,7 @@
         android:layout_gravity="center"
         android:visibility="gone" />
 
-    <!--<EditText-->
-    <!--android:id="@+id/search_box"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:hint="Enter a query, then press Search"-->
-    <!--android:textSize="18sp" />-->
+
     <!--<TextView-->
     <!--android:id="@+id/url_display"-->
     <!--android:layout_width="match_parent"-->
