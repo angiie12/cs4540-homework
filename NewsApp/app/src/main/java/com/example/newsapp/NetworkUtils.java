@@ -3,7 +3,7 @@ package com.example.newsapp;
 import android.net.Uri;
 import android.util.Log;
 
-import com.example.newsapp.model.NewsItem;
+import com.example.newsapp.data.NewsItem;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,16 +25,16 @@ public class NetworkUtils {
     public static final String TAG = "NetworkingURL";
 
     public static final String BASE_URL = "https://newsapi.org/v1/articles";
-    public static final String PARAM_KEY = "apikey";
     public static final String PARAM_SOURCE="source";
     public static final String source = "the-next-web";
     public static final String PARAM_SORT = "sortBy";
-//    public static final String sortBy = "latest";
+    public static final String sortBy = "latest";
+    public static final String PARAM_KEY = "apikey";
 
     // TODO Please insert your API key here
     public static final String API_key = "";
 
-    public static URL buildUrl(String searchQuery, String sortBy) {
+    public static URL buildUrl() {
         Uri builtUri = Uri.parse(BASE_URL).buildUpon()
                 .appendQueryParameter(PARAM_SOURCE,source)
                 .appendQueryParameter(PARAM_SORT, sortBy)

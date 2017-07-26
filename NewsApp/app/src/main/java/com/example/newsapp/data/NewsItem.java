@@ -1,4 +1,4 @@
-package com.example.newsapp.model;
+package com.example.newsapp.data;
 
 /**
  * Created by Angie on 6/26/2017.

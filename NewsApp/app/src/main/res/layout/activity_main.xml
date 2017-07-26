@@ -4,22 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="20dp"
     tools:context="com.example.newsapp.MainActivity">
 
-    <EditText
-        android:id="@+id/search_box"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter a query, then press Search"
-        android:textSize="18sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:visibility="gone" />
 
+    <!--<EditText-->
+    <!--android:id="@+id/search_box"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:hint="Enter a query, then press Search"-->
+    <!--android:textSize="18sp" />-->
     <!--<TextView-->
     <!--android:id="@+id/url_display"-->
     <!--android:layout_width="match_parent"-->
@@ -36,12 +50,4 @@
     <!--android:layout_height="wrap_content"-->
     <!--android:textSize="18sp"/>-->
     <!--</ScrollView>-->
-
-    <!-- Replace scroll view with recycler view-->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
 </LinearLayout>
