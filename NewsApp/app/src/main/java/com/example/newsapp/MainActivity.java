@@ -24,11 +24,11 @@ import com.example.newsapp.data.DBHelper;
 import com.example.newsapp.data.DatabaseUtils;
 
 
-public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Void>, MyAdapter.ItemClickListener {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Void>, NewsAdapter.ItemClickListener {
     static final String TAG = "mainactivity";
     private ProgressBar progress;
     private RecyclerView rv;
-    private MyAdapter adapter;
+    private NewsAdapter adapter;
     private Cursor cursor;
     private SQLiteDatabase db;
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         super.onStart();
         db = new DBHelper(MainActivity.this).getReadableDatabase();
         cursor = DatabaseUtils.getAll(db);
-        adapter = new MyAdapter(cursor, this);
+        adapter = new NewsAdapter(cursor, this);
         rv.setAdapter(adapter);
     }
 
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         db = new DBHelper(MainActivity.this).getReadableDatabase();
         cursor = DatabaseUtils.getAll(db);
 
-        adapter = new MyAdapter(cursor, this);
+        adapter = new NewsAdapter(cursor, this);
         rv.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 

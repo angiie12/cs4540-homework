@@ -3,7 +3,6 @@ package com.example.newsapp;
 import android.content.Context;
 import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,14 +12,14 @@ import android.widget.TextView;
 import com.example.newsapp.data.Contract;
 import com.squareup.picasso.Picasso;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ItemHolder> {
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {
 
     private Cursor cursor;
     private ItemClickListener listener;
     private Context context;
     public static final String TAG = "myadapter";
 
-    public MyAdapter(Cursor cursor, ItemClickListener listener) {
+    public NewsAdapter(Cursor cursor, ItemClickListener listener) {
         this.cursor = cursor;
         this.listener = listener;
     }

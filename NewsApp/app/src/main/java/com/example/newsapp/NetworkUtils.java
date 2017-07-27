@@ -71,7 +71,6 @@ public class NetworkUtils {
         }
     }
 
-
     // add parseJSON method
     public static ArrayList<NewsItem> parseJSON(String json) throws JSONException {
         ArrayList<NewsItem> result = new ArrayList<>();
@@ -84,13 +83,13 @@ public class NetworkUtils {
             String title = item.getString("title");
             String description = item.getString("description");
             String url = item.getString("url");
-            String imgUrl = item.getString("urlToImage");
+            String urlToImage = item.getString("urlToImage");
             String publishedAt = item.getString("publishedAt");
 
-            NewsItem newsItem = new NewsItem(author, title, description, imgUrl, url, publishedAt);
+            NewsItem newsItem = new NewsItem(author, title, description, url, urlToImage, publishedAt);
             result.add(newsItem);
         }
-        Log.d(TAG, "# of articles: " + result.size());
+
         return result;
     }
 }
