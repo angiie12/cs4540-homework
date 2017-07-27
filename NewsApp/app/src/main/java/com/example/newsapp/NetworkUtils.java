@@ -25,25 +25,25 @@ public class NetworkUtils {
     public static final String TAG = "NetworkingURL";
 
     public static final String BASE_URL = "https://newsapi.org/v1/articles";
-    public static final String PARAM_SOURCE="source";
+    public static final String PARAM_SOURCE = "source";
     public static final String source = "the-next-web";
     public static final String PARAM_SORT = "sortBy";
     public static final String sortBy = "latest";
     public static final String PARAM_KEY = "apiKey";
 
     // TODO Please insert your API key here
-    public static final String API_key = "";
+    public static final String apiKey = "";
 
     public static URL buildUrl() {
         Uri builtUri = Uri.parse(BASE_URL).buildUpon()
-                .appendQueryParameter(PARAM_SOURCE,source)
+                .appendQueryParameter(PARAM_SOURCE, source)
                 .appendQueryParameter(PARAM_SORT, sortBy)
-                .appendQueryParameter(PARAM_KEY, API_key)
+                .appendQueryParameter(PARAM_KEY, apiKey)
                 .build();
 
         URL url = null;
         try {
-            String urlString= builtUri.toString();
+            String urlString = builtUri.toString();
             Log.d(TAG, "Url: " + urlString);
             url = new URL(builtUri.toString());
         } catch (MalformedURLException e) {
@@ -70,6 +70,7 @@ public class NetworkUtils {
             urlConnection.disconnect();
         }
     }
+
 
     // add parseJSON method
     public static ArrayList<NewsItem> parseJSON(String json) throws JSONException {
@@ -100,5 +101,4 @@ public class NetworkUtils {
         }
         return result;
     }
-
 }

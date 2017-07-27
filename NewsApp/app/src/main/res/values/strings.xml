@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">News App</string>
-    <string name="search"><font color="white">Search</font></string>
+    <string name="refresh"><font color="white">Refresh</font></string>
 </resources>

@@ -78,11 +78,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemNumber = item.getItemId();
-
-        if (itemNumber == R.id.search_box) {
+        if (itemNumber == R.id.action_refresh) {
             load();
         }
-
         return true;
     }
 

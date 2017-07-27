@@ -28,7 +28,6 @@ public class NewsJob extends JobService {
             protected void onPostExecute(Object o) {
                 jobFinished(job, false);
                 super.onPostExecute(o);
-
             }
         };
         mBackgroundTask.execute();
@@ -37,9 +36,7 @@ public class NewsJob extends JobService {
 
     @Override
     public boolean onStopJob(JobParameters job) {
-
         if (mBackgroundTask != null) mBackgroundTask.cancel(false);
-
         return true;
     }
 }
