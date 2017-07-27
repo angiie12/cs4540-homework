@@ -15,9 +15,6 @@ import java.util.ArrayList;
 
 public class RefreshTasks {
 
-    public static final String ACTION_REFRESH = "refresh";
-
-
     public static void refreshArticles(Context context) {
         ArrayList<NewsItem> result = null;
         URL url = NetworkUtils.buildUrl();

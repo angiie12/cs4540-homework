@@ -77,7 +77,6 @@ public class NetworkUtils {
         ArrayList<NewsItem> result = new ArrayList<>();
         JSONObject main = new JSONObject(json);
         JSONArray articles = main.getJSONArray("articles");
-        String imgUrl = null;
 
         for (int i = 0; i < articles.length(); i++) {
             JSONObject item = articles.getJSONObject(i);
@@ -85,20 +84,13 @@ public class NetworkUtils {
             String title = item.getString("title");
             String description = item.getString("description");
             String url = item.getString("url");
-            String urlToImage = item.getString("urlToImage");
+            String imgUrl = item.getString("urlToImage");
             String publishedAt = item.getString("publishedAt");
 
-            JSONArray mediaObjects = item.optJSONArray("media");
-            if (mediaObjects != null) {
-                JSONObject img = mediaObjects.getJSONObject(0);
-                JSONArray metaData = img.getJSONArray("media-metadata");
-                JSONObject thumbNail = metaData.getJSONObject(0);
-                imgUrl = thumbNail.getString("url");
-            }
-
-            NewsItem newsItem = new NewsItem(author, title, description, url, imgUrl, publishedAt);
+            NewsItem newsItem = new NewsItem(author, title, description, imgUrl, url, publishedAt);
             result.add(newsItem);
         }
+        Log.d(TAG, "# of articles: " + result.size());
         return result;
     }
 }
