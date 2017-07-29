@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
+// refresh results
 public class RefreshTasks {
 
     public static void refreshArticles(Context context) {

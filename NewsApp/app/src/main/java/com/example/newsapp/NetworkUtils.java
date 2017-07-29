@@ -34,6 +34,7 @@ public class NetworkUtils {
     // TODO Please insert your API key here
     public static final String apiKey = "";
 
+    // build the url to the news articles
     public static URL buildUrl() {
         Uri builtUri = Uri.parse(BASE_URL).buildUpon()
                 .appendQueryParameter(PARAM_SOURCE, source)

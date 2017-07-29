@@ -9,12 +9,13 @@ import com.firebase.jobdispatcher.JobService;
 public class NewsJob extends JobService {
     AsyncTask mBackgroundTask;
 
+    // once the articles are refreshed
     @Override
     public boolean onStartJob(final JobParameters job) {
         mBackgroundTask = new AsyncTask() {
             @Override
             protected void onPreExecute() {
-                Toast.makeText(NewsJob.this, "News refreshed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewsJob.this, "News refreshed!", Toast.LENGTH_SHORT).show();
                 super.onPreExecute();
             }
 

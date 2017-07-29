@@ -14,6 +14,7 @@ import com.firebase.jobdispatcher.Trigger;
 import java.util.concurrent.TimeUnit;
 
 public class ScheduleUtilities {
+
     private static final int SCHEDULE_INTERVAL_MINUTES = 1;
     private static final int SYNC_FLEXTIME_SECONDS = 59;
     private static final String NEWS_JOB_TAG = "news_job_tag";
@@ -25,7 +26,7 @@ public class ScheduleUtilities {
 
         Driver driver = new GooglePlayDriver(context);
         FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(driver);
-
+        // load news articles every minute
         Job constraintRefreshJob = dispatcher.newJobBuilder()
                 .setService(NewsJob.class)
                 .setTag(NEWS_JOB_TAG)

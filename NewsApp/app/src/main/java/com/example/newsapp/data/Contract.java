@@ -2,12 +2,8 @@ package com.example.newsapp.data;
 
 import android.provider.BaseColumns;
 
-/**
- * Created by Angie on 7/25/2017.
- */
-
 public class Contract {
-
+    // columns for the database
     public static class TABLE_ARTICLES implements BaseColumns {
         public static final String TABLE_NAME = "articles";
         public static final String COLUMN_NAME_TITLE = "title";

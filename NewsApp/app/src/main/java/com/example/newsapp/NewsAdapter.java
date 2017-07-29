@@ -23,6 +23,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {
         this.cursor = cursor;
         this.listener = listener;
     }
+
     public interface ItemClickListener {
         void onItemClick(Cursor cursor, int clickedItemIndex);
     }
@@ -71,6 +72,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ItemHolder> {
             publishedAt.setText(cursor.getString(cursor.getColumnIndex(Contract.TABLE_ARTICLES.COLUMN_NAME_PUBLISHED_AT)));
             String url = cursor.getString(cursor.getColumnIndex(Contract.TABLE_ARTICLES.COLUMN_NAME_URL_TO_IMAGE));
 //            Log.d(TAG, url);
+            // load image using Picasso
             if(url != null){
                 Picasso.with(context)
                         .load(url)

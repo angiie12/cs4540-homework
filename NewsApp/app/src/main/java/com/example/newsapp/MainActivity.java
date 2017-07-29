@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     private static final int NEWS_LOADER = 1;
 
+    // load what was in the database
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         ScheduleUtilities.scheduleRefresh(this);
     }
 
+    // get information from the database
     @Override
     protected void onStart() {
         super.onStart();
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         return true;
     }
 
+    // refresh button
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemNumber = item.getItemId();
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
         return true;
     }
-
+    // replaced asynctask
     @Override
     public Loader<Void> onCreateLoader(int id, final Bundle args) {
         return new AsyncTaskLoader<Void>(this) {
@@ -119,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoaderReset(Loader<Void> loader) {
     }
 
+    // on news article selected
     @Override
     public void onItemClick(Cursor cursor, int clickedItemIndex) {
         cursor.moveToPosition(clickedItemIndex);

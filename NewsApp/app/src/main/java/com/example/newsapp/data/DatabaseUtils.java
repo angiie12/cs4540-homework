@@ -22,7 +22,7 @@ public class DatabaseUtils{
         );
         return cursor;
     }
-
+    // store articles in the database in the appropriate column
     public static void bulkInsert(SQLiteDatabase db, ArrayList<NewsItem> articles) {
 
         db.beginTransaction();
